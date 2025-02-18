@@ -50,4 +50,4 @@ if sys.platform.startswith('win'):
     copy_dll_files(c_source_directory, target_directory)
 else:
     copy_so_files(source_directory, target_directory)
-    process_so_files(target_directory)
+    # process_so_files(target_directory)

@@ -13,7 +13,7 @@ import org.y4sec.encryptor.util.OSUtil;
  */
 @Parameters(commandDescription = "Export Command")
 class ExportCommand implements Constants {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger(ExportCommand.class);
     /**
      * Output Directory
      */

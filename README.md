@@ -1,5 +1,7 @@
 # code-encryptor
 
+* 感谢https://github.com/4ra1n/code-encryptor的author,[对原始项目的编译优化和使用说明](qqreadme.md)
+
 [English Doc](doc/README-en.md)
 
 [![](https://img.shields.io/github/v/release/4ra1n/code-encryptor)](https://github.com/4ra1n/code-encryptor/releases/latest)

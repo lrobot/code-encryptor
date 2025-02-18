@@ -17,7 +17,7 @@ import java.nio.file.Paths;
  */
 @Parameters(commandDescription = "Patch Command")
 class PatchCommand implements Constants {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger(PatchCommand.class);
     /**
      * Input jar file
      */

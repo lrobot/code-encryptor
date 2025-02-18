@@ -16,7 +16,7 @@ import java.nio.file.Paths;
  * JNI Utils
  */
 public class JNIUtil implements Constants {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger(JNIUtil.class);
     private static final String lib = "java.library.path";
 
     /**

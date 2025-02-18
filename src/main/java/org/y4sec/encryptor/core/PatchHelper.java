@@ -21,7 +21,7 @@ import java.util.zip.ZipOutputStream;
  * Patch core class
  */
 public class PatchHelper implements Constants {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger(PatchHelper.class);
 
     /**
      * Patch a jar
