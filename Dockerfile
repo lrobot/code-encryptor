@@ -51,5 +51,7 @@ RUN java -jar target/code-encryptor-plus-0.3-cli.jar
 #################### runner
 FROM docker.io/eclipse-temurin:17-jre-centos7 as runner
 #FROM eclipse-temurin:17-jre-jammy
-COPY --from=java_builder /app/target/code-encryptor-plus-0.3-cli.jar  /app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+COPY --from=native_builder /app/native/build-release/libdecrypter.so  /libdecrypter.so
+COPY --from=java_builder /app/target/code-encryptor-plus-0.3-cli.jar  /code_encryptor.jar
+ENTRYPOINT ["ls","/"]
+#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/code_encryptor.jar"]
