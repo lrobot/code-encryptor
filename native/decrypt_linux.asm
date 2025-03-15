@@ -20,7 +20,7 @@ decrypt:
     ; rbx = 0
     xor rbx, rbx
     ; rbx = rbx + 4
-    add rbx, 004h
+    add rbx, 010h
     ; signature
     mov rsi, rcx
     sub rsi, 001h

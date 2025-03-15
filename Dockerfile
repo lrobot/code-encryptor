@@ -32,7 +32,7 @@ COPY . .
 RUN cd native && \
 	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=ninja -G Ninja -S . -B build-release && \
 	cmake --build build-release --target all
-	
+RUN /app/native/build-release/decrypt_test
 CMD ["echo", "build code-encryptor ${CODE_ENC_VER} completed - /app/build.zip"]
 
 
@@ -49,7 +49,7 @@ RUN --mount=type=cache,target=/usr/share/maven/ref/repository mvn -s m2_settings
 RUN --mount=type=cache,target=/usr/share/maven/ref/repository mvn -s m2_settings_container.xml package -DskipTests
 RUN java -jar target/code-encryptor-plus-0.3-cli.jar
 #################### runner
-FROM docker.io/eclipse-temurin:17-jre-centos7 as runner
+FROM docker.io/maven:3.9.9-amazoncorretto-17-debian-bookworm as runner
 #FROM eclipse-temurin:17-jre-jammy
 COPY --from=native_builder /app/native/build-release/libdecrypter.so  /libdecrypter.so
 COPY --from=java_builder /app/target/code-encryptor-plus-0.3-cli.jar  /code_encryptor.jar

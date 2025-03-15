@@ -66,6 +66,7 @@ public class PatchHelper implements Constants {
                 byte[] bytes = bao.toByteArray();
 
                 String name = entry.getName();
+                logger.info("read entry: {} size: {}", name, bytes.length);
 
                 String tempClassName;
                 if (name.toLowerCase().endsWith(ClassFile)) {
@@ -110,7 +111,7 @@ public class PatchHelper implements Constants {
 
                 try {
                     dstJar.putNextEntry(ne);
-
+                    logger.info("write entry: {} size: {}", name, bytes.length);
                     // allow duplicate entry
                     // https://stackoverflow.com/questions/39958486/
                     Field namesField = ZipOutputStream.class.getDeclaredField("names");

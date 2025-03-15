@@ -1,4 +1,13 @@
 
+##  最后发现此方案和sprintboot有冲突
+
+* spring-core会跳过java自己的class加载机制。直接读取jar包中的class文件进行class的分析。结果读取到了加密的内容。报错
+* 发现 https://github.com/roseboy/classfinal 项目据说是没有class文件整体加密。而是加密class中的方法体。可以尝试一下
+* 还发现*.asm汇编代码中对于 signature部分的处理也有问题。没有那个文档描述过那个字段是signature.
+
+
+* java --add-opens=java.base/java.util.zip=ALL-UNNAMED -jar /code_encryptor.jar patch --jar /app.jar --package com.xxx --key 0123456789abceef
+
 ## better
 
 * 用docker的multistage方式编译出native 和jar 然后放入jar运行环境中

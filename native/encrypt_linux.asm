@@ -19,6 +19,7 @@ encrypt:
     mov rcx, rsi
     ; rbx = 0
     xor rbx, rbx
+    add rbx, 010h
 link_start:
     ; if rbx >= rcx goto end
     cmp rbx, rcx

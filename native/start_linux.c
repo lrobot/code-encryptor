@@ -118,7 +118,8 @@ void JNICALL ClassDecryptHook(
             return;
         }
 
-        DE_LOG("START DECRYPT");
+        DE_LOG("START DECRYPTx");
+        printf("name: %s\n", name);
         // 1. all xxtea
         int total = (class_data_len - 10) / 8;
         for (int i = 0; i < total; i++) {

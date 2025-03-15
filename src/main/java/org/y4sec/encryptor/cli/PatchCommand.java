@@ -64,6 +64,7 @@ class PatchCommand implements Constants {
         }
 
         // do patch
+        logger.info("patch jar: {}, bykey:{}", jarPath, key);
         PatchHelper.patchJar(path, libPath, packageName, key.getBytes());
     }
 }
